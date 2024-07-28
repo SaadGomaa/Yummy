@@ -1,0 +1,182 @@
+:root {
+  --main-color: rgb(13, 13, 13);
+}
+body {
+  background-color: var(--main-color);
+  color: #f9f6f6;
+}
+aside {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  white-space: nowrap;
+}
+.main-side {
+  min-height: 100vh;
+  display: flex;
+  color: rgb(255, 255, 255);
+}
+.main-side .side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  width: 0px;
+  transition: width 0.7s;
+}
+.main-side .nav-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: var(--main-color);
+  background-color: white;
+}
+.main-side .nav-header img {
+  width: 50px;
+}
+.main-side ul li {
+  list-style-type: none;
+  padding: 8px 0px;
+}
+.main-side ul a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.main-side i {
+  cursor: pointer;
+}
+.menu-links {
+  display: none;
+}
+.menu-links.show {
+  display: block;
+}
+.link-item {
+  opacity: 0;
+  transform: translate(-50px, 50px);
+  animation: fadeInFromSide 0.5s ease forwards;
+}
+.menu-links.show .link-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.menu-links.show .link-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.menu-links.show .link-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.menu-links.show .link-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.menu-links.show .link-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+@keyframes fadeInFromSide {
+  from {
+    opacity: 0;
+    transform: translate(0px, 50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* ============= End Nav ============*/
+
+/* ============= Start Meal ===========*/
+
+.meal {
+  cursor: pointer;
+  overflow: hidden;
+}
+.meal:hover .meal-layer {
+  top: 0px;
+}
+.meal .meal-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  background-color: #f9f6f6ca;
+  display: flex;
+  align-items: center;
+  color: black;
+  padding: 8px;
+  transition: all 0.5s;
+}
+
+/* ============= End Meal ===========*/
+
+/*============== Start Loading ============*/
+
+.loading {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  color: #fff;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+/*============== End Loading ============*/
+
+/*==============  ============*/
+
+
+.btn.active {
+  background-color: lightcoral;
+  border-color: lightcoral;
+  color: white;
+  cursor: pointer;
+}
+
